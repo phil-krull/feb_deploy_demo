@@ -1,0 +1,20 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Users</title>
+</head>
+<body>
+    <h1>Users edit page</h1>
+    <form action="{% url 'users:update' user_id=user.id %}" method="post">
+            {% csrf_token %}
+            <input type="text" name='first_name' value = {{ user.first_name }}>
+            <input type="text" name='last_name' value = {{ user.last_name }}>
+            <input type="text" name='email' value = {{ user.email }}>
+            <input type="submit" value="Update user">
+        </form>
+    <a href="{% url 'users:index' %}">Go Back</a>
+    <a href="{% url 'users:show' user_id=1 %}">Show</a>
+</body>
+</html>

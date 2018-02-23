@@ -1,0 +1,19 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Users</title>
+</head>
+<body>
+    <h1>Users new page</h1>
+    <form action="{% url 'users:create' %}" method="post">
+        {% csrf_token %}
+        <input type="text" name='first_name'>
+        <input type="text" name='last_name'>
+        <input type="text" name='email'>
+        <input type="submit" value="Add user">
+    </form>
+    <a href="{% url 'users:index' %}">Go Back</a>
+</body>
+</html>
